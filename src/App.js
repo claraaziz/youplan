@@ -1,23 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import PlanList from './Pages/PlanList';
+import PlanPage from './Pages/PlanPage'
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='bg-[#EFEFEF] min-h-screen flex items-center justify-center text-center'>
+      <div className='overflow-visible scroll-smooth m-20'>
+        <Routes>
+          <Route path='/' element={<PlanList/>} />
+          <Route path='/plan/:planId' element={<PlanPage/>} />
+        </Routes>
+      </div>
     </div>
   );
 }
